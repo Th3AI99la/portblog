@@ -1,0 +1,305 @@
+body{
+    width: 100%;
+        h2{
+            font-weight: 700;
+        }
+        p{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.4rem;
+        }
+  /*  img{
+        width: 100%;
+        height: 100vh;
+    }
+   */
+   .section-bg{
+    background-color: #eff5ff; 
+   }
+}
+
+.menu-mobile{
+        position: fixed;
+        color: #fff;
+        background-color: #252c90;
+        right: 1rem;
+        top: 1rem;
+        font-size: 1.5rem;
+        border-radius: 4rem;
+        cursor: pointer;
+        z-index: 10;
+        width: 45px;
+        height: 45px;
+        display: none;
+        align-items: center;
+        justify-content: center;
+}
+
+#main{
+    margin-left: 30rem;
+    
+    #inicio{
+        background-image: url("../img/fundo.png");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
+        background-position: center;
+        width: 100%;
+        height: 100vh;
+        z-index: -1;
+
+       .flex-column{
+       h2{
+            font-size: 6rem;
+       }
+       span{
+            margin-right: 8rem;
+            font-size: 1.5rem;
+            .text-shadow{
+                text-shadow: 4px 4px 10px #000000;
+            }
+        }
+       }
+       #arraste{
+        @include flex(flex, center, center);
+        width: 9rem;
+        padding-bottom: 1rem;
+        a{
+          text-decoration: none; 
+          color: #fff; 
+        }
+       }
+    }
+
+    #sobre{
+       
+            h2{
+                font-weight: 700;
+            }
+            h3{
+                font-weight: 500;
+            }
+            p{
+                width: 100%;
+                padding: 0 0 0 0;
+                display: flex;
+                justify-content: center;
+                font-size: 1.4rem;       
+            }
+            img{
+                border-radius: 5%;
+            }
+        
+      
+    }
+
+    #habilidades{
+         
+            h2{
+                font-weight: 700;
+            }
+        
+            p{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 1.4rem;       
+            }
+            #card_habilidades{
+               
+                .progress{
+                    display: flex;
+                    align-items: center;
+                    height: 1.5rem;
+                    font-size: 1rem;
+                    padding-bottom: .5rem;
+                   }
+            }
+
+           
+    }
+    #curriculo{
+        h2{
+            font-weight: 700;
+        }
+        .column{
+            h3{
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-weight: 500; 
+                margin-bottom: 4rem;
+                font-style:inherit;
+            }
+        }
+       
+        .cv-title{
+            font-weight: 500;
+            margin-bottom: 2rem;
+            color: #050d18;
+            
+        }
+        .cv-item::before{
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -.9rem;
+            width: 1.6rem;
+            height: 1.6rem;
+            border: .2rem solid #1f5297;
+            background: #fff;
+            border-radius: 50%;
+        }
+        .cv-item{
+            padding: 0 0 2rem 2rem;
+            margin-top: -2rem;
+            border-left: 2px solid #1f5297;
+            position: relative;
+            h4{
+                line-height: 1.8rem;
+                font-weight: 600;
+                text-transform: uppercase;
+                font-family: "Poppins", sans-serif;
+                color: #050d18;
+                margin-bottom: 1rem;
+            }
+            h5{
+                background: #e4edf9;
+                padding: .5rem 1.5rem;
+                display: inline-block;
+                font-weight: 600;
+                margin-bottom: 1rem;
+            }
+        }
+    }
+    #portiforio{
+        #carouselPortiforio{
+            .carousel-indicators{
+                margin-bottom: -3.5rem;
+            }
+            .carousel-control-prev{
+                margin-left: -8rem;
+            }
+            .carousel-control-next{
+                margin-right: -8rem;
+            }
+        }
+    }
+    #contato{
+        
+    }
+}
+
+
+
+
+
+
+
+
+/* Estilização ScrollView */
+*::-webkit-scrollbar{
+    width: 1rem;
+  
+}
+
+*::-webkit-scrollbar-track{
+    width: 1rem;
+    box-shadow: inset 0 0 .3rem #00000050;
+    background-color: #fff;
+}
+
+*::-webkit-scrollbar-thumb{
+    background-color: #252c90;
+    left: 2rem;
+}
+
+.menu-nav-active{
+    overflow: hidden;
+}
+.menu-nav-active #header{
+    left: 0;
+}
+
+
+/*Animação*/
+
+[data-anime]{
+    opacity: 0;
+    transition: 1s;
+}
+
+[data-anime = "donw"]{
+    transform: translate3d(0,-100%,0);
+}
+
+[data-anime = "up"]{
+    transform: translate3d(0,100%,0);
+}
+
+[data-anime = "left"]{
+    transform: translate3d(-100%,0,0);
+}
+
+[data-anime = "right"]{
+    transform: translate3d(50px,0,0);
+}
+
+[data-anime].animate{
+    opacity: 1;
+    transform: translate3d(0,0,0);
+}
+
+
+
+
+
+
+@media (max-width: 1860px){
+    .carousel-control-prev{
+        margin-left: 0;
+    }
+    .carousel-control-next{
+        margin-right: 0;
+    }
+    [data-anime="right"]{
+        transform: translate3d(0, 100%, 0);
+    }
+}
+
+@media (max-width: 1190px){
+    .menu-mobile{
+        display: flex;
+    }
+    #header{
+        left: -30rem;
+    }
+    #main{
+        margin-left: 0;
+        #inicio{
+            .flex-column{
+               
+                h2{
+                    font-size: 3.5rem;
+                }
+                span{
+                    margin-right: 0;
+                    font-size: 1.5rem;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 762px){
+    #main{
+        #sobre{
+            h3{
+                margin-top: 3rem;
+                margin-bottom: 1.5rem;
+            }
+        }
+    }
+}
